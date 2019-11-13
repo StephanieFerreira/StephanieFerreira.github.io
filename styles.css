@@ -13,6 +13,17 @@
 	height: 2rem;
 }
 
+.sentence{
+	color: green;
+	font-size: 30pt;
+	font-weight: bold;
+	font-family: "new century schoolbook"
+}
+
+.number{
+	color: red;
+}
+
 .container {
 	width: 1128px;
 	height: 588px;
