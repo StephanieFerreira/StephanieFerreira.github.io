@@ -25,6 +25,7 @@ const createCalendar = () => {
 		var today = new Date();
 		if (today.getDate() > i ){
 			pdf_path = `./${num}.pdf`
+			pdf_path = './docs/test.pdf'
 			calendarDoor.addEventListener("click", openDoor.bind(null,pdf_path))
 		}
 	}
