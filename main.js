@@ -24,9 +24,8 @@ const createCalendar = () => {
 		calendarContainer.appendChild(calendarDoor);
 		
 		var today = new Date();
-		if (today.getDate() > i && today.getMonth() == 11){
-			pdf_path = `./${num}.pdf`
-			pdf_path = './docs/test.pdf'
+		if (today.getDate() > i && today.getMonth() == 10){
+			pdf_path = `./docs/${num}.pdf`
 			calendarDoor.addEventListener("click", openDoor.bind(null,pdf_path))
 		}
 	}
@@ -41,7 +40,7 @@ const createFirstLine = () => {
 	}  
 	var one_day=1000*60*60*24;
 	n = Math.ceil((cmas.getTime()-today.getTime())/(one_day))
-	firstLine.innerHTML = "Noch <div style=\"display: inline\", class=\"number\">" + n + "</div> Tage bis Weihnachten"
+	firstLine.innerHTML = " - Noch <div style=\"display: inline\", class=\"number\">" + n + "</div> Tage bis Weihnachten - "
 }
 
 function save(){
