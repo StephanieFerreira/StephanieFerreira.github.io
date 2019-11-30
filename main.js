@@ -24,7 +24,7 @@ const createCalendar = () => {
 		calendarContainer.appendChild(calendarDoor);
 		
 		var today = new Date();
-		if (today.getDate() > i && today.getMonth() == 10){
+		if (today.getDate() > i && today.getMonth() == 11){
 			pdf_path = `./docs/${num}.pdf`
 			calendarDoor.addEventListener("click", openDoor.bind(null,pdf_path))
 		}
