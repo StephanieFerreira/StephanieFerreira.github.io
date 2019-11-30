@@ -4,9 +4,15 @@ const firstLine = document.querySelector(".sentence")
 
 const calendarDays = 24;
 
-const openDoor = (pdf, event) => {
+const openDoor = (num,event) => {
+	pdf = `./docs/${num}.pdf`
 	event.target.style.opacity = "0"
 	window.open(pdf, '_blank', 'fullscreen=yes'); 
+	
+	for (let i = 1; i < num; i++){
+		var door = document.getElementById("door"+i);
+		door.style.opacity = "0"
+	}
 }
 
 const createCalendar = () => {
@@ -20,13 +26,13 @@ const createCalendar = () => {
 		
 		calendarDoor.classList.add("image")
 		calendarDoor.style.gridArea = "door" + (i + 1);
+		calendarDoor.id = "door" + (i + 1);
 		calendarDoor.style.backgroundImage = `url(${path})`
 		calendarContainer.appendChild(calendarDoor);
 		
 		var today = new Date();
 		if (today.getDate() > i && today.getMonth() == 11){
-			pdf_path = `./docs/${num}.pdf`
-			calendarDoor.addEventListener("click", openDoor.bind(null,pdf_path))
+			calendarDoor.addEventListener("click", openDoor.bind(null,num))
 		}
 	}
 }
